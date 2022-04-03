@@ -2,5 +2,5 @@
 
 <form [formGroup]="form">
   <input type="text" placeholder="product name" formControlName="name">
-  <button>Add</button>
+  <button [disabled]="!formValid" (click)="addOrSaveClick()">{{ editOrAddText }}</button>
 </form>

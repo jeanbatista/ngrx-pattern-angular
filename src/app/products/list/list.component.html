@@ -1,7 +1,10 @@
 <h3>List</h3>
 
-<ul>
-  <li>
-    <span>Name</span>
-  </li>
-</ul>
+<div *ngFor="let product of products | async">
+  <div class="item-list">
+    <p>Id: {{ product.id }}</p>
+    <p>Name: {{ product.name }}</p>
+    <button (click)="editClick(product)">edit</button>
+    <button (click)="deleteClick(product.id)">delete</button>
+  </div>
+</div>
