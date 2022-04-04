@@ -13,3 +13,8 @@ export const selectProductEditForm = createSelector(
     selectProduct,
     (state: ProductState) => state.editForm
 )
+
+export const selectTotalRecords = createSelector(
+    selectProduct,
+    (state: ProductState) => state.products.length
+)

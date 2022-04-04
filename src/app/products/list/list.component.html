@@ -1,5 +1,9 @@
 <h3>List</h3>
 
+<h4>Total Records: {{ totalRecords | async }}</h4>
+
+<hr>
+
 <div *ngFor="let product of products | async">
   <div class="item-list">
     <p>Id: {{ product.id }}</p>

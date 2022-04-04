@@ -9,6 +9,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { reducers } from './state/reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { effects } from './state/effect';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { reducers } from './state/reducer';
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    EffectsModule.forRoot(effects),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
